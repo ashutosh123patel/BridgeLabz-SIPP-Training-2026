@@ -47,14 +47,16 @@ public class BankAccount {
 
     public static void main(String[] args) {
         display();
-        BankAccount myaccount = new BankAccount("14565220", "Ashutosh Patel", 2400);
-        myaccount.displayBalance();
+        BankAccount myaccount1 = new BankAccount("145652201", "Ashutosh Patel", 2400);
+        //BankAccount myaccount2 = new BankAccount("145652202", "Abhishek Patel", 2400);
+        //BankAccount myaccount3 = new BankAccount("145652203", "Neha Gupta", 2400);
+        myaccount1.displayBalance();
 
-        myaccount.deposit(3200);
-        myaccount.displayBalance();
+        myaccount1.deposit(3200);
+        myaccount1.displayBalance();
 
-        myaccount.withdraw(1200);
-       myaccount.displayBalance();
+        myaccount1.withdraw(1200);
+       myaccount1.displayBalance();
         
     }
 }
