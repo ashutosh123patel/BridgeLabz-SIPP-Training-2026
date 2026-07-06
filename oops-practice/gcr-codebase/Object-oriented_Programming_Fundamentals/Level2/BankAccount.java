@@ -24,11 +24,11 @@ class BankAccount {
             System.out.println("Insufficient Balance");
         }
     }
-
+    
     void displayBalance() {
         System.out.println("Account Holder : " + accountHolder);
         System.out.println("Account Number : " + accountNumber);
-        System.out.println("Balance : " + balance);
+        System.out.println("Balance : " +    balance);    
     }
 
     public static void main(String[] args) {
