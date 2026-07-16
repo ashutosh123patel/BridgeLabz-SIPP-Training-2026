@@ -45,15 +45,43 @@ public class TreeCreation {
         inOrder(root.right);
 
     }
-    public static void levelOrder(Node root){
+
+    public static void levelOrder(Node root) {
         Queue<Node> q = new LinkedList<>();
         q.offer(root);
-        while(!q.isEmpty()){
+        while (!q.isEmpty()) {
             Node ele = q.poll();
             System.out.println(ele.data);
-            if(ele.left!=null) q.offer(ele.left);
-            if(ele.right!=null) q.offer(ele.right);
+            if (ele.left != null)
+                q.offer(ele.left);
+            if (ele.right != null)
+                q.offer(ele.right);
 
+        }
+    }
+
+    public static void rightView(Node root) {
+        if (root == null) {
+            return;
+        }
+        Queue<Node> q = new LinkedList<>();
+        q.offer(root);
+        while (!q.isEmpty()) {
+            int size = q.size();
+            for (int i = 0; i < size; i++) {
+                Node ele = q.poll();
+                if (i == size - 1) {
+                    System.out.print(ele.data + " ");
+                }
+
+                if (ele.left != null) {
+                    q.offer(ele.left);
+                }
+
+                if (ele.right != null) {
+                    q.offer(ele.right);
+                }
+            }
         }
     }
 
@@ -92,6 +120,9 @@ public class TreeCreation {
 
         System.out.println();
         levelOrder(t1);
+
+        System.out.println();
+        rightView(t1);
 
     }
 
