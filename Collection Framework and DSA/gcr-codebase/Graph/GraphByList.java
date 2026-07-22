@@ -41,21 +41,16 @@ public class GraphByList {
         }
     }
 
-    void dfs(int startVertex) {
-        boolean[] visited = new boolean[vertex];
-        dfsHelper(startVertex, visited);
-    }
-
-    void dfsHelper(int curr, boolean[] visited) {
-        visited[curr] = true;
-        System.out.print(curr + " ");
-
-        for (int neigh : adjList.get(curr)) {
-            if (!visited[neigh]) {
-                dfsHelper(neigh, visited);
+    void dfs(int startVertex , HashSet<Integer> hs) {
+        List<Integer> currList = adjList.get(startVertex);
+        for (int neigh : currList) {
+            if (!hs.contains(neigh)) {
+                dfs(neigh, hs);
             }
         }
     }
+
+    
 
     public void print() {
         for (int i = 0; i < vertex; i++) {
