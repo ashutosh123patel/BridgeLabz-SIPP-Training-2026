@@ -41,6 +41,12 @@ public class GraphByList {
         }
     }
 
+    void traversalBfs(int startVertex){
+        HashSet<Integer> hs = new HashSet<>();
+        hs.add(startVertex);
+        dfs(startVertex, hs);
+    }
+
     void dfs(int startVertex , HashSet<Integer> hs) {
         List<Integer> currList = adjList.get(startVertex);
         for (int neigh : currList) {
@@ -72,8 +78,8 @@ public class GraphByList {
         g.addEdges(2, 3);
 
         g.bfs(0);
-        // System.out.println();
-        // g.print();
+        
+        
 
     }
 }
